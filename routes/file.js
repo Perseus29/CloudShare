@@ -1,5 +1,7 @@
 const router = require('express').Router();
 
-router.post('/')
+router.post('/' , (req,res)=>{
+    
+})
 
 module.exports.router;
