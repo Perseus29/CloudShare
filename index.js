@@ -13,11 +13,8 @@ mongoose.connect(process.env.db_url)
         console.log(err);
     })
 
-
-
-
-
+app.use('/files' , require('./routes/file'));
 
 app.listen(port, () => {
-    console.log(`connected on port: ${port}`);
+    console.log(`Connected on port: ${port}`);
 });
