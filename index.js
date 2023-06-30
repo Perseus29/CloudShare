@@ -1,10 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 require('dotenv').config();
 const app = express();
 
 const port = process.env.port || 4000;
 
+app.set('views',path.join(__dirname,'/views'));
+app.set('view engine' , 'ejs');
 
 mongoose.connect(process.env.db_url)
     .then(() => {
