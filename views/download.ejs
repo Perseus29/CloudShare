@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Download Page</title>
 </head>
+
 <body>
-    Download Page
+    <center>
+
+        <% if(locals.error){ %>
+            <h1>
+                <%= error %>
+            </h1>
+        <% } else { %>
+            <h2>
+                Your file is ready to download
+            </h2>
+            <p>
+                Link expires in 24 hours
+            </p>
+            <h4><%= fileName %></h4>
+            <h4><%= parseInt(fileSize/1024) %> KB</h4>
+            <a href="<%= download %>">Download File</a>
+        <% } %>
+
+    </center>
 </body>
+
 </html>
