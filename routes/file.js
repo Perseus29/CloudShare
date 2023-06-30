@@ -44,4 +44,41 @@ router.post('/', (req, res) => {
 
 })
 
+router.post('/send', async (req, res) => {
+    const { uuid, recieverEmail, senderEmail } = req.body;
+
+    if (!uuid || !recieverEmail || !senderEmail) {
+        return res.status(422).send({ error: "All fields are required1!" });
+    }
+
+    const file = await File.findOne({ uuid: uuid });
+
+    if(!file){
+        return res.json({error : "Link has been expired"});
+    }
+
+    file.sender = senderEmail;
+    file.receiver = recieverEmail;
+
+    const data = await file.save();
+
+    const sendMail = require('../services/email');
+
+    sendMail({
+        senderEmail : senderEmail,
+        recieverEmail : recieverEmail,
+        subject : "CloudShare file sharing",
+        text : `${senderEmail} shared a file with you`,
+        html: require('../services/emailTemplate')({
+            emailFrom : senderEmail,
+            downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}`,
+            size: parseInt(file.size/1024) + ' KB',
+            expires: '24 hours'
+        })
+    })
+
+    return res.send({success : true});
+
+})
+
 module.exports = router;
