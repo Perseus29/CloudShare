@@ -13,8 +13,9 @@ mongoose.connect(process.env.db_url)
         console.log(err);
     })
 
-app.use('/files' , require('./routes/file'));
+app.use('/api/files' , require('./routes/file'));
+app.use('/files',require('./routes/view'))
 
 app.listen(port, () => {
     console.log(`Connected on port: ${port}`);
-});
+}); 
