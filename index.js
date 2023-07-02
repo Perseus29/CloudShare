@@ -23,8 +23,8 @@ app.use('/files',require('./routes/view'));
 app.use('/files/download',require('./routes/download'));
 app.use('/home' , (req,res)=>{
     res.render('home');
-})
+});
 
 app.listen(port, () => {
     console.log(`Connected on port: ${port}`);
-}); 
+});
