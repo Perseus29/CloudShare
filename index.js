@@ -2,7 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 require('dotenv').config();
+const cron = require('node-cron');
 const app = express();
+const fs = require('fs');
+const File = require('./models/file');
 const port = process.env.port || 4000;
 
 app.use(express.json())
@@ -11,12 +14,30 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'))
 
 
+
 mongoose.connect(process.env.db_url)
     .then(() => {
         console.log("Connected to database");
     }).catch((err) => {
         console.log(err);
     })
+
+cron.schedule("0 0 2 * * *",async function(){
+    const pastDate = new Date(Date.now() - 24*60*60*1000);
+    const files = await File.find({ createdAt: { $lt: pastDate } });
+    if (files.length) {
+        for (const file of files) {
+            try {
+                fs.unlinkSync(file.path);
+                await file.deleteOne();
+                console.log(`successfully deleted ${file.filename}`);
+            } catch (err) {
+                console.log(`error while deleting file ${err} `);
+            }
+        }
+    }
+    console.log('Job done!');    
+})
 
 
 app.get('/', (req, res) => {
