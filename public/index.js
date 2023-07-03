@@ -60,7 +60,7 @@ emailForm.addEventListener("submit", (e) => {
 
     emailForm[2].setAttribute("disabled" , "true");
 
-    fetch("http://localhost:4000/api/files/send", {
+    fetch("/api/files/send", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -106,7 +106,7 @@ const uploadFile = () => {
         progressBar.style.transform = scaleX;
     };
 
-    xhr.open("POST", "http://localhost:4000/api/files");
+    xhr.open("POST", "/api/files");
     xhr.send(formData);
 
 }
