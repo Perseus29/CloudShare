@@ -93,7 +93,7 @@ If you have any feedback or want to see any feature live, please reach out to me
 
 ## Screenshots
 
-https://github.com/Perseus29/CloudShare/assets/94976184/8a730a0c-cbf6-4849-9e7b-83b4981abeaa
+(https://github.com/Perseus29/CloudShare/assets/94976184/8a730a0c-cbf6-4849-9e7b-83b4981abeaa)
 
 https://github.com/Perseus29/CloudShare/assets/94976184/e308b122-fa81-42a1-af46-75d533a9ba0e
 
