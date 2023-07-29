@@ -9,12 +9,13 @@ const File = require('./models/file');
 const port = process.env.port || 4000;
 
 app.use(express.json())
+//Template engine
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 
-
+// MongoDb Connection
 mongoose.connect(process.env.db_url)
     .then(() => {
         console.log("Connected to database");
@@ -22,7 +23,9 @@ mongoose.connect(process.env.db_url)
         console.log(err);
     })
 
-cron.schedule("0 0 2 * * *",async function(){
+
+// Deletes all records older than 24 hours 
+cron.schedule("0 15 * * * *",async function(){
     const pastDate = new Date(Date.now() - 24*60*60*1000);
     const files = await File.find({ createdAt: { $lt: pastDate } });
     if (files.length) {
@@ -40,6 +43,8 @@ cron.schedule("0 0 2 * * *",async function(){
 })
 
 
+
+//Routes
 app.get('/', (req, res) => {
     res.render('home');
 });

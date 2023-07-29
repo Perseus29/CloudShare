@@ -9,7 +9,7 @@ const fileURLInput = document.querySelector("#fileURL");
 const copyBtn = document.querySelector("#copyBtn");
 const sharingContainer = document.querySelector(".sharing-container");
 const emailForm = document.querySelector("#emailForm");
-const maxAllowedSize = 100*1024*1024;
+const maxAllowedSize = 100*1024*1024; //100mb
 
 dropZone.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ dropZone.addEventListener("drop", (e) => {
 
 });
 
+// file input change and uploader
 fileInput.addEventListener("change", () => {
     uploadFile();
 })
@@ -43,13 +44,14 @@ browseBtn.addEventListener("click", () => {
     fileInput.click();
 })
 
+// sharing container listenrs
 copyBtn.addEventListener("click", () => {
     fileURLInput.select();
     document.execCommand("copy");
 })
 
 emailForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // stop submission
     const url = fileURLInput.value;
     const formData = {
         uuid: url.split("/").splice(-1, 1)[0],
@@ -58,6 +60,7 @@ emailForm.addEventListener("submit", (e) => {
     }
     // console.log(formData);   
 
+    // disable the button
     emailForm[2].setAttribute("disabled" , "true");
 
     fetch("/api/files/send", {
@@ -82,14 +85,20 @@ const uploadFile = () => {
     }
     const file = fileInput.files[0];
     if(file.size > maxAllowedSize){
-        fileInput.value = "";
+        fileInput.value = ""; // reset the input
         alert("Can't upload more than 100MB!")
         return;
     }
+
+    //show the uploader
     processContainer.style.display = "block";
     const formData = new FormData();
     formData.append("uploadFile", file);
+
+    // upload file
     const xhr = new XMLHttpRequest();
+
+    // listen for response which will give the link
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log(xhr.response);
@@ -97,6 +106,7 @@ const uploadFile = () => {
         }
     };
 
+    // listen for upload progress
     xhr.upload.onprogress = function (event) {
         // find the percentage of uploaded
         let percent = Math.round((100 * event.loaded) / event.total);
@@ -113,7 +123,9 @@ const uploadFile = () => {
 
 const onUploadSuccess = ({ file: url }) => {
     console.log(url);
-    fileInput.value = "";
+    fileInput.value = "";// reset the input
+
+    // remove the disabled attribute from form btn & make text send
     emailForm[2].removeAttribute("disabled");
     processContainer.style.display = "none";
     sharingContainer.style.display = "block";

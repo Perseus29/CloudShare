@@ -20,8 +20,10 @@ let upload = multer({
 
 router.post('/', (req, res) => {
 
-    upload(req, res, async (err) => {
 
+    // Store file
+    upload(req, res, async (err) => {
+        // Validate request
         if (!req.file) {
             return res.json({ error: "Didn't recieve a file" })
         }
@@ -30,6 +32,7 @@ router.post('/', (req, res) => {
             return res.status(500).send({ error: err.message });
         }
 
+        // Store into Database
         const file = new File({
             filename: req.file.filename,
             path: req.file.path,
@@ -47,10 +50,12 @@ router.post('/', (req, res) => {
 router.post('/send', async (req, res) => {
     const { uuid, recieverEmail, senderEmail } = req.body;
 
+    //validate request
     if (!uuid || !recieverEmail || !senderEmail) {
         return res.status(422).send({ error: "All fields are required1!" });
     }
 
+    // Get data from database 
     const file = await File.findOne({ uuid: uuid });
 
     if(!file){
@@ -62,6 +67,7 @@ router.post('/send', async (req, res) => {
 
     const data = await file.save();
 
+    // send mail
     const sendMail = require('../services/email');
 
     sendMail({
