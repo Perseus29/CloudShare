@@ -6,11 +6,20 @@ FileShare is a web application built using Node.js , Express.js and MongoDB that
 https://github.com/Perseus29/CloudShare/assets/94976184/5893f059-21ed-49f9-92c3-573167d9b93b
 
 
-## Tech Stack
+<!-- ## Tech Stack
 
 **Client:** HTML, CSS, Javascript, Ejs
 
-**Server:** Node.js, Express.js, MongoDB Atlas
+**Server:** Node.js, Express.js, MongoDB Atlas -->
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Javascript
+- HTML
+- CSS
+- Ejs
 
 ## Features
 - **File Upload**: Users can easily upload files from their local machine to the web application.
@@ -20,11 +29,6 @@ https://github.com/Perseus29/CloudShare/assets/94976184/5893f059-21ed-49f9-92c3-
 - **Responsive Design**: The web application is designed to be responsive and user-friendly across different devices.
 
 
-## Contribution
-
-Contributions are always welcome!
-
-If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ## Getting Started
 
@@ -75,3 +79,11 @@ Start the server
 ```
 
 3. Open your web browser and go to `http://localhost:4000` to access the FileShare web application.
+
+
+
+## Contribution
+
+Contributions are always welcome!
+
+If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
