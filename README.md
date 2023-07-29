@@ -54,18 +54,18 @@ To run this project, you must have the following installed:
 
 ## Configuration
 
-Before running the application, you need to set up some configuration variables. Create a `.env` file in the `server` directory and add the following:
+Before running the application, you need to set up some configuration variables. Create a `.env` file in the project directory and add the following:
 
 ```env
-PORT=3001
-MONGODB_URI=mongodb://localhost:27017/fileshare
+APP_BASE_URL=http://localhost:4000
+db_url=your-mongodb-url
 SMTP_HOST=your-smtp-host
 SMTP_PORT=your-smtp-port
-SMTP_USER=your-smtp-username
-SMTP_PASS=your-smtp-password
+MAIL_USER=your-smtp-username
+MAIL_PASS=your-smtp-password
 ```
 
-Make sure to replace the placeholder values (`your-smtp-host`, `your-smtp-port`, `your-smtp-username`, `your-smtp-password`) with your actual SMTP server details for email functionality.
+Make sure to replace the placeholder values (`your-smtp-host`, `your-smtp-port`, `your-smtp-username`, `your-smtp-password` , `your-mongodb-url`) with your actual SMTP server and mongodb atlas details for email and database functionality.
 
 ## Usage
 
