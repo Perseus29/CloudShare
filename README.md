@@ -20,8 +20,8 @@ https://github.com/Perseus29/CloudShare/assets/94976184/5893f059-21ed-49f9-92c3-
 - **Responsive Design**: The web application is designed to be responsive and user-friendly across different devices.
 
 
-## Contributing
+## Contribution
 
-Contributions are welcome!
+Contributions are always welcome!
 
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
