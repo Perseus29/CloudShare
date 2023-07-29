@@ -41,19 +41,14 @@ To run this project, you must have the following installed:
 
 1. Clone this repository to your local machine using Git.
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Perseus29/CloudShare.git
    ```
 
-2. Navigate to the project's root directory.
-   ```bash
-   cd your-repo
-   ```
+2. Navigate to the project's directory.
 
-3. Install the required dependencies for both the server and the client.
+
+3. Install the required dependencies.
    ```bash
-   cd server
-   npm install
-   cd ../client
    npm install
    ```
 
