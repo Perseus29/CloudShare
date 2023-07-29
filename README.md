@@ -22,4 +22,5 @@ https://github.com/Perseus29/CloudShare/assets/94976184/5893f059-21ed-49f9-92c3-
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome!
+If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
