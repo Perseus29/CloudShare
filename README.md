@@ -69,16 +69,9 @@ Make sure to replace the placeholder values (`your-smtp-host`, `your-smtp-port`,
 
 ## Usage
 
-1. Start the server:
-   ```bash
-   cd server
-   npm start
-   ```
+Start the server
+```bash
+  npm start
+```
 
-2. Start the client:
-   ```bash
-   cd client
-   npm start
-   ```
-
-3. Open your web browser and go to `http://localhost:3000` to access the FileShare web application.
+3. Open your web browser and go to `http://localhost:4000` to access the FileShare web application.
