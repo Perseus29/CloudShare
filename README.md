@@ -87,3 +87,9 @@ Start the server
 Contributions are always welcome!
 
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## Feedback
+
+If you have any feedback or want to see any feature live, please reach out to me at newbalance480@gmail.com
+
+## Screenshots
