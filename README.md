@@ -19,8 +19,7 @@ https://github.com/Perseus29/CloudShare/assets/94976184/5893f059-21ed-49f9-92c3-
 - **Secure Links**: Each uploaded file receives a unique and secure link, ensuring privacy and preventing unauthorized access.
 - **Responsive Design**: The web application is designed to be responsive and user-friendly across different devices.
 
-## Contribution
 
-Contributions are always welcome!
+## Contributing
 
-Hope to see IITG friends contributing to this initiative. 
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
