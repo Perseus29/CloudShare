@@ -39,7 +39,6 @@ Follow these instructions to set up the project on your local machine for develo
 To run this project, you must have the following installed:
 
 - Node.js and npm (Node Package Manager)
-- MongoDB
 
 ### Installation
 
@@ -93,3 +92,9 @@ If you find any issues or have suggestions for improvements, feel free to open a
 If you have any feedback or want to see any feature live, please reach out to me at newbalance480@gmail.com
 
 ## Screenshots
+
+https://github.com/Perseus29/CloudShare/assets/94976184/8a730a0c-cbf6-4849-9e7b-83b4981abeaa
+
+https://github.com/Perseus29/CloudShare/assets/94976184/e308b122-fa81-42a1-af46-75d533a9ba0e
+
+https://github.com/Perseus29/CloudShare/assets/94976184/d9c14918-3f49-4b83-b1ca-1133e30e2f68
